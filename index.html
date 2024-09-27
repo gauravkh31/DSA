@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Inbox Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+        }
+        td, th {
+            /* padding: 2px; */
+            padding-top: 2px;
+        }
+        .sidebar {
+            width: 20%;
+            /* vertical-align: top; */
+            /* padding-top: 50px; */
+        }
+        .inbox {
+            width: 80%;
+        }
+        .search {
+            margin-left: 350px;
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 8px;
+            margin-bottom: 5px;
+        }
+        /* .sidebar a:hover {
+            background-color: #f2f2f2;
+        } */
+        .header {
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .mail-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .mail-item:hover {
+            background-color: #f9f9f9;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+        .user-icon {
+            text-align: right;
+        }
+        .sss{
+            margin-top: 1px;
+            height: 200px;
+            width: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td colspan="2">
+            <table>
+                <tr>
+                    <td><img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x.png" alt="Gmail Logo" height="40"></td>
+                    <td class="user-icon"><img src="https://www.w3schools.com/howto/img_avatar.png" alt="User Icon" height="40"></td> 
+                    <tr>
+                        <td colspan="2" class="header">Gmail</td>
+                    </tr>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="sidebar" class="ss">
+            <table class="sss">
+                <tr>
+                    <td class="p"><a href="#">Compose Mail</a></td>
+                </tr>
+                <tr>
+                    <td class="p"><a href="#">Inbox</a></td>
+                </tr>
+                <tr>
+                    <td class="p"><a href="#">Starred</a></td>
+                </tr>
+                <tr>
+                    <td class="p"><a href="#">Sent Mail</a></td>
+                </tr>
+                <tr>
+                    <td class="p"><a href="#">Drafts</a></td>
+                </tr>
+                <tr>
+                    <td class="p"><a href="#">All Mail</a></td>
+                </tr>
+                <tr>
+                    <td class="p"><a href="#">Spam</a></td>
+                </tr>
+                <tr>
+                    <td class="p"><a href="#">Trash</a></td>
+                </tr>
+                <tr>
+                    <td class="p"><a href="#">Contacts</a></td>
+                </tr>
+            </table>
+        </td>
+        <td class="inbox">
+            <table>
+               
+                <tr>
+                    <td colspan="2">
+                        <input type="text" class="search" placeholder="Search...">
+                    </td>
+                </tr>
+                <br><br><br><br>
+                <tr>
+                    <td class="mail-item">
+                        📧 You have an invitation - Hi Rahul, 2:20 pm
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mail-item">
+                        📧 Facebook friending Pooja Mittal recently sent you a friend request 2:16 pm
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mail-item">
+                        📧 You have an invitation - Hi Rahul, 2:20 pm
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mail-item">
+                        📧 Facebook friending Pooja Mittal recently sent you a friend request 2:16 pm
+                    </td>
+                </tr>
+                <tr></tr>
+                    <td class="mail-item">
+                        📧 You have an invitation - Hi Rahul, 2:20 pm
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mail-item">
+                        📧 Facebook friending Pooja Mittal recently sent you a friend request 2:16 pm
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mail-item">
+                        📧 You have an invitation - Hi Rahul, 2:20 pm
+                    </td>
+                </tr>
+                <tr>
+                    <td class="mail-item">
+                        📧 Facebook friending Pooja Mittal recently sent you a friend request 2:16 pm
+                    </td>
+                </tr>
+                
+                
+            </table>
+        </td>
+        
+    </tr>
+    
+    <tr>
+        <td colspan="2" class="footer">
+            .Terms .Privacy .Gmail Blog .Google Home
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
