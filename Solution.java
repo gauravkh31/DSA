@@ -29,7 +29,7 @@
 
 public class Solution {
 public static void main(String[] args) {
-    int [] a = {}
+    int [] a = {};
 }
     public static int maxSubArray(int[] nums) {
         int n = nums.length;
