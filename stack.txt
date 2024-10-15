@@ -1,0 +1,11 @@
+// all prefix, postfix and infix type questions
+
+1. infix evaluation👍                    
+2. infix to postfix conversion👍
+3. infix to prefix conversion👍
+4. postfix evaluation👍
+5. postfix to prefix conversion👍
+6. postfix to infix conversion
+7. prefix evaluation👍
+8. prefix to postfix conversion👍
+9. prefix to infix conversion
