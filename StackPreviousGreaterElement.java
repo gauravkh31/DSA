@@ -1,6 +1,5 @@
-import java.util.Stack;
-
-public class StackPreviousSmallerElement {
+import java.util.*;
+public class StackPreviousGreaterElement {
     public static void main(String[] args) {
         int input[] = {2,4,1,6,3,4,2,5};
         int n = input.length;
@@ -12,7 +11,7 @@ public class StackPreviousSmallerElement {
                 st.push(i);
             }
 
-            while(!st.empty() && input[st.peek()]>input[i]){
+            while(!st.empty() && input[st.peek()]<input[i]){
                 output[st.peek()] = input[i];
                 st.pop();
             }
@@ -25,5 +24,7 @@ public class StackPreviousSmallerElement {
         for(int i =0 ; i <n ; i++){
             System.out.print(output[i]+ " ");
         }
-    }
+    
 }
+}
+
