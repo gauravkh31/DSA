@@ -42,7 +42,7 @@ public class RecursionKKStrings{
 
 
 
-    // method to skip apple from a string 
+    // method to skip apple from a string using answer as argument 
     public static String skipAWord(String s, String ans, String word){
         if (s.isEmpty()) {
             return ans;
@@ -59,6 +59,24 @@ public class RecursionKKStrings{
 
     }
 
+ 
+
+
+    // method to skip apple from a string using not  answer as argument 
+    public static String skipAWordWithOutArgument(String s, String word){
+        if (s.isEmpty()) {
+            return "";
+        }
+
+        
+        char ch = s.charAt(0);
+        if(s.startsWith(word)){
+            return skipAWordWithOutArgument(s.substring(word.length()),word);
+        }else{
+            return ch+ skipAWordWithOutArgument(s.substring(1),word);
+        }
+    }
+
 
 
 
@@ -70,6 +88,7 @@ public class RecursionKKStrings{
         System.out.println(skip(s,ans));
         System.out.println(skipWithoutArguement(s));
         System.out.println(skipAWord(st,"","apple"));
+        System.out.println(skipAWordWithOutArgument(st,"apple"));
 
     }
 }
