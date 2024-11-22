@@ -64,13 +64,47 @@ public class GenericTree {
 
 
     public static int maximum(Node node){
-        int maxVal = node.data;
+        int maxVal = Integer.MIN_VALUE;
         for(Node child: node.children){
             maxVal = Math.max(maxVal, maximum(child));
             
         }
+        maxVal = Math.max(maxVal, node.data);
         
         return maxVal;
+    }
+
+
+
+
+    public static int heightByNodes(Node node){
+        int h=0; 
+        for(Node child : node.children){
+            h = Math.max(h,heightByNodes(child));
+                }
+                h+=1;
+        return h;
+    }
+
+
+    public static int heightByEdges(Node node){
+        int h=-1; 
+        for(Node child : node.children){
+            h = Math.max(h,heightByEdges(child));
+                }
+                h+=1;
+        return h;
+    }
+
+
+    public static void traversal(Node node){
+        System.out.println("Node pre -"+ node.data);
+        for(Node child : node.children){
+            System.out.println("Edge pre - " + node.data + " - " + child.data);
+            traversal(child);
+            System.out.println("Edge post: "+ node.data+ " -" + child.data);
+        }
+        System.out.println("Node post -"+ node.data);
     }
 
     public static void main(String[] args) {
@@ -84,9 +118,12 @@ public class GenericTree {
         display(ex);
        
 
-        int size = totalLength(ex);
-        System.out.println(size);
+        
+        System.out.println(totalLength(ex));
         System.out.println(maximum(ex));
+        System.out.println(heightByNodes(ex));
+        System.out.println(heightByEdges(ex));
+        traversal(ex);
 
 
 
