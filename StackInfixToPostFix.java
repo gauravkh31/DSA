@@ -72,12 +72,7 @@ public class StackInfixToPostFix {
                     }else{
                         op.push(ch);
                     }
-                    
-
                 }
-                   
-              
-
             }
         }
         while (val.size() > 1) {
@@ -90,7 +85,5 @@ public class StackInfixToPostFix {
 
         }
         System.out.println(val.peek());
-    }
-   
-    
+    }   
 }

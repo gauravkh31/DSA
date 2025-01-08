@@ -2,7 +2,8 @@ import java.util.*;
 
 public class StackInfixEvaluation {
     public static void main(String[] args) {
-        String str = "((2+3)*(5-2))";
+        // String str = "((2+3)*(5-2))";
+        String str = "9-(5+3)*4/6";
         Stack<Integer> val = new Stack<>();
         Stack<Character> op = new Stack<>();
         for (int i = 0; i < str.length(); i++) {
@@ -84,9 +85,6 @@ public class StackInfixEvaluation {
                     
 
                 }
-                   
-              
-
             }
         }
         while (val.size() > 1) {
@@ -105,5 +103,4 @@ public class StackInfixEvaluation {
         }
         System.out.println(val.peek());
     }
-
 }

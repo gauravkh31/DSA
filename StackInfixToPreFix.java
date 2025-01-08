@@ -14,8 +14,8 @@ public class StackInfixToPreFix {
                 String s = ""+ ch;
                 val.push(s);
             }
-            // agr woh integer nhi hai toh chack krenge age us time op poora khaali hai toh
-            // direct usko push kr denge op me, and agr wo openiing paranthesis hai toh bhi
+            // agr woh integer nhi hai toh check krenge age us time op poora khaali hai toh
+            // direct usko push kr denge op me, and agr wo opening paranthesis hai toh bhi
             // usko op me push kr denge and agr us time jb woh aya tb agr op ke peek pe
             // opening bracket hai toh bhi us element ko direct push kr dengge op me ..
             else if (op.size() == 0 || ch == '(' || op.peek() == '(') {
@@ -36,7 +36,6 @@ public class StackInfixToPreFix {
                     val.push(insert);
 
                     op.pop();
-
                 }
                 op.pop();
 
