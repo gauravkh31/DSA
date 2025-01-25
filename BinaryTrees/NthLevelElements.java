@@ -1,8 +1,9 @@
-public class MaximumSum{
-    
+public class NthLevelElements{
 
 
-    // creating a node class
+
+
+     // creating a node class
     public static class Node{
         int val;
         Node left;
@@ -12,8 +13,6 @@ public class MaximumSum{
             this.val = val;
         }
     }
-
-
 
 
     // function to display a binary tree 
@@ -34,22 +33,15 @@ public class MaximumSum{
 
 
 
-    // function to find Maximum node
-    public static int max(Node node){
-        if(node== null) return Integer.MIN_VALUE;
+    // function to print elements at nth level
+    public static void nthlevel(Node node,int level){
+       if(node == null) return;
+       if(level ==1) System.out.print(node.val + " ");
 
-        int a = max(node.left);
-        int b = max(node.right);
-        return Math.max(Math.max(a,b),node.val);
-        
-
+       nthlevel(node.left, level-1);
+       nthlevel(node.right,level-1);
+         
     }
-
-
-
-
-
-
 
 
     public static void main(String[] args) {
@@ -66,9 +58,10 @@ public class MaximumSum{
         Node f = new Node(7);
         b.left = e;
         b.right = f;
-        System.out.println(max(root));
+        nthlevel(root,3);
 
     }
+
 
 
 }

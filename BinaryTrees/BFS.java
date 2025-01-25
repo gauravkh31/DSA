@@ -1,8 +1,11 @@
-public class MaximumSum{
+// import java.lang.runtime.TemplateRuntime;
+import java.util.*;
+
+public class BFS{
     
 
 
-    // creating a node class
+     // creating a node class
     public static class Node{
         int val;
         Node left;
@@ -12,8 +15,6 @@ public class MaximumSum{
             this.val = val;
         }
     }
-
-
 
 
     // function to display a binary tree 
@@ -31,24 +32,22 @@ public class MaximumSum{
     }
 
 
+    // function to bfs traversal
+    public static void bfs(Node root){
 
-
-
-    // function to find Maximum node
-    public static int max(Node node){
-        if(node== null) return Integer.MIN_VALUE;
-
-        int a = max(node.left);
-        int b = max(node.right);
-        return Math.max(Math.max(a,b),node.val);
         
+        Queue<Node> qu = new ArrayDeque<>();
+        if(root!=null) qu.add(root);
+        while(qu.size()>0){
+            Node temp = qu.remove();
+            System.out.print(temp.val+" ");
+          if(temp.left!=null)  qu.add(temp.left);
+           if(temp.right!=null)  qu.add(temp.right);
+        }
+
+
 
     }
-
-
-
-
-
 
 
 
@@ -66,9 +65,7 @@ public class MaximumSum{
         Node f = new Node(7);
         b.left = e;
         b.right = f;
-        System.out.println(max(root));
+        bfs(root);
 
     }
-
-
 }

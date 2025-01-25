@@ -1,6 +1,8 @@
-public class MaximumSum{
-    
 
+import javax.swing.RootPaneContainer;
+
+public class Sum{
+    
 
     // creating a node class
     public static class Node{
@@ -34,18 +36,13 @@ public class MaximumSum{
 
 
 
-    // function to find Maximum node
-    public static int max(Node node){
-        if(node== null) return Integer.MIN_VALUE;
+    // function to calculate sum of all nodes
+    public static int sums(Node node){
+        if(node == null ) return 0;
 
-        int a = max(node.left);
-        int b = max(node.right);
-        return Math.max(Math.max(a,b),node.val);
-        
-
+        return node.val + sums(node.left) + sums(node.right);
+ 
     }
-
-
 
 
 
@@ -66,9 +63,8 @@ public class MaximumSum{
         Node f = new Node(7);
         b.left = e;
         b.right = f;
-        System.out.println(max(root));
+        System.out.println(sums(root));
 
     }
-
 
 }

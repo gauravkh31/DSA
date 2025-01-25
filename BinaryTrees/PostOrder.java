@@ -1,7 +1,5 @@
-public class MaximumSum{
+public class PostOrder{
     
-
-
     // creating a node class
     public static class Node{
         int val;
@@ -12,8 +10,6 @@ public class MaximumSum{
             this.val = val;
         }
     }
-
-
 
 
     // function to display a binary tree 
@@ -31,25 +27,16 @@ public class MaximumSum{
     }
 
 
-
-
-
-    // function to find Maximum node
-    public static int max(Node node){
-        if(node== null) return Integer.MIN_VALUE;
-
-        int a = max(node.left);
-        int b = max(node.right);
-        return Math.max(Math.max(a,b),node.val);
-        
-
+    // function to display in postorder traversal
+    public static void postorder(Node node){
+        if(node==null){
+            return;
+        }
+       
+        postorder(node.left);
+        postorder(node.right);
+         System.out.print(node.val+" ");
     }
-
-
-
-
-
-
 
 
     public static void main(String[] args) {
@@ -66,9 +53,7 @@ public class MaximumSum{
         Node f = new Node(7);
         b.left = e;
         b.right = f;
-        System.out.println(max(root));
+        postorder(root);
 
     }
-
-
 }

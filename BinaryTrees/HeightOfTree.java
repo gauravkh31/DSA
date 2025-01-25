@@ -1,4 +1,5 @@
-public class MaximumSum{
+import java.util.*;
+public class HeightOfTree{
     
 
 
@@ -34,13 +35,12 @@ public class MaximumSum{
 
 
 
-    // function to find Maximum node
-    public static int max(Node node){
-        if(node== null) return Integer.MIN_VALUE;
+    // function to find height of a binary tree
+    public static int height(Node node){
+        if(node== null) return 0;
+        if(node.left==null && node.right==null) return 0;
 
-        int a = max(node.left);
-        int b = max(node.right);
-        return Math.max(Math.max(a,b),node.val);
+        return 1 + Math.max(height(node.left), height(node.right));
         
 
     }
@@ -66,7 +66,7 @@ public class MaximumSum{
         Node f = new Node(7);
         b.left = e;
         b.right = f;
-        System.out.println(max(root));
+        System.out.println(height(root));
 
     }
 

@@ -1,7 +1,5 @@
-public class MaximumSum{
+public class ProductOfTree{
     
-
-
     // creating a node class
     public static class Node{
         int val;
@@ -34,13 +32,12 @@ public class MaximumSum{
 
 
 
-    // function to find Maximum node
-    public static int max(Node node){
-        if(node== null) return Integer.MIN_VALUE;
+    // function to find product of the binary tree
+    public static int product(Node node){
+        if(node== null) return 1;
 
-        int a = max(node.left);
-        int b = max(node.right);
-        return Math.max(Math.max(a,b),node.val);
+        
+        return node.val* product(node.left) * product(node.right);
         
 
     }
@@ -66,9 +63,7 @@ public class MaximumSum{
         Node f = new Node(7);
         b.left = e;
         b.right = f;
-        System.out.println(max(root));
+        System.out.println(product(root));
 
     }
-
-
 }
