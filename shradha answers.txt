@@ -1,0 +1,72 @@
+1. 
+public Pair<Integer, Integer> getMinMax(int[] arr) {
+        // Code Here
+        
+        int minimum = arr[0];
+        int maximum = arr[0];
+        
+        for(int i : arr){
+            if(i>maximum){
+                maximum = i;
+            }
+            if(i<minimum){
+                minimum = i;
+            }
+        }
+        
+        
+        
+        
+        
+        
+     return new Pair(minimum, maximum);   
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. 
+public void reverseArray(int arr[]) {
+        // code here
+        int i =0; 
+        int j = arr.length-1;
+        while(i<j){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+    }
+
+
+
+
+
+
+
+
+3. 
+public int maxSubArray(int[] nums) {
+        int maxSum =nums[0]; 
+        int sum = nums[0];
+
+        for(int i =1; i < nums.length; i++){
+            sum = Math.max(nums[i], sum + nums[i]);
+            maxSum = Math.max(sum,maxSum);
+        }
+
+
+       return maxSum; 
+    }
