@@ -95,3 +95,30 @@ public int maxSubArray(int[] nums) {
         }
         return false;
     }
+
+
+
+
+
+
+    5. 
+    important-
+    Arraylist ko collection ke sort method se sort kr skte hai.
+    isme constant sliding window use hua hai
+    
+
+     public int findMinDiff(ArrayList<Integer> arr, int m) {
+        // your code here
+        Collections.sort(arr);
+        int i =0; 
+        int j = m-1;
+        int min = arr.get(j)-arr.get(i);
+        while(j<arr.size()){
+            if((arr.get(j)-arr.get(i))<min){
+                min=arr.get(j)-arr.get(i);
+            }
+            i++;
+            j++;
+        }
+        return min;
+    }
