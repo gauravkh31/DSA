@@ -122,3 +122,66 @@ public int maxSubArray(int[] nums) {
         }
         return min;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    7. 
+    class Solution {
+    public static void swap(int[] a, int i, int j) {
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
+    public static void reverse(int[] a, int i, int j) {
+        while (i < j) {
+            swap(a, i, j);
+            i++;
+            j--;
+        }
+    }
+
+    void nextPermutation(int[] arr) {
+        int n = arr.length;
+        int p = -1;
+
+        // Step 1: Find the first decreasing element from the right
+        for (int i = n - 1; i > 0; i--) {
+            if (arr[i - 1] < arr[i]) {
+                p = i - 1;
+                break;
+            }
+        }
+
+        // Step 2: If no such element exists, reverse the array (last permutation -> first permutation)
+        if (p == -1) {
+            reverse(arr, 0, n - 1);
+            return;
+        }
+
+        // Step 3: Find the smallest element on the right of 'p' that is larger than arr[p]
+        for (int i = n - 1; i > p; i--) {
+            if (arr[i] > arr[p]) {
+                swap(arr, p, i);
+                break;
+            }
+        }
+
+        // Step 4: Reverse the elements to the right of 'p' to get the next permutation
+        reverse(arr, p + 1, n - 1);
+    }
+}
