@@ -196,6 +196,45 @@ public int maxSubArray(int[] nums) {
 
 
 
+8.
+
+
+    public ArrayList<Integer> repeatedNumber(final List<Integer> nums) {
+          int n = nums.size();
+    
+    long sumExpected = (long) n * (n + 1) / 2;
+    long sumSquaresExpected = (long) n * (n + 1) * (2 * n + 1) / 6;
+    
+    long sumActual = 0, sumSquaresActual = 0;
+    
+    for (int num : nums) {
+        sumActual += num;
+        sumSquaresActual += (long) num * num;
+    }
+    
+    long sumDiff = sumActual - sumExpected; // A - B
+    long sumSquaresDiff = sumSquaresActual - sumSquaresExpected; // A^2 - B^2
+    
+    long sumAB = sumSquaresDiff / sumDiff; // (A + B) = (A^2 - B^2) / (A - B)
+    
+    int A = (int) ((sumDiff + sumAB) / 2);
+    int B = (int) (sumAB - A);
+    
+    ArrayList<Integer> ans = new ArrayList<>();
+    ans.add(A);
+    ans.add(B);
+    return ans;
+  
+        
+    }
+
+
+
+
+
+
+
+
 
 
 
