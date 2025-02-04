@@ -196,7 +196,41 @@ public int maxSubArray(int[] nums) {
 
 
 
+
+
+
+
+
+
+
+
 8.
+public int maxProfit(int[] prices) {
+        int currMin = prices[0];
+        int maxProfit = 0;
+
+        for(int i = 0;i < prices.length; i++){
+            maxProfit = Math.max(maxProfit, prices[i] - currMin);
+
+            currMin = Math.min(currMin, prices[i]);
+        }
+        return maxProfit;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    9.
 
 
     public ArrayList<Integer> repeatedNumber(final List<Integer> nums) {
@@ -228,25 +262,3 @@ public int maxSubArray(int[] nums) {
         
     }
 
-
-
-
-
-
-
-
-
-
-
-8.
-public int maxProfit(int[] prices) {
-        int currMin = prices[0];
-        int maxProfit = 0;
-
-        for(int i = 0;i < prices.length; i++){
-            maxProfit = Math.max(maxProfit, prices[i] - currMin);
-
-            currMin = Math.min(currMin, prices[i]);
-        }
-        return maxProfit;
-    }
